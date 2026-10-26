@@ -1,0 +1,597 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #0b0b0b;
+    color: #e8e8e8;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 6%;
+    background-color: rgba(11, 11, 11, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(230, 195, 92, 0.2);
+    direction: ltr;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sk {
+    font-size: 48px;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1;
+    background: linear-gradient(135deg, #8a6a1f, #f5d77a, #b8860b, #f5d77a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: #e6c35c;
+}
+
+.tagline {
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: #cfae4a;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    direction: rtl;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    color: #e8e8e8;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #e6c35c;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e6c35c;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #e6c35c;
+    cursor: pointer;
+}
+
+/* ===== عناوين الأقسام ===== */
+.section-title {
+    margin: 0 0 12px;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #b8860b, #f5d77a, #b8860b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.section-sub {
+    margin: 0 auto 50px;
+    max-width: 600px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.9;
+    color: #cfcfcf;
+}
+
+/* ===== من أنا ===== */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 90px 8%;
+    direction: ltr;
+}
+
+.about-img {
+    flex: 1;
+    aspect-ratio: 16 / 10;
+    background-image: url(../imgs/بورتريه\ سينمائي\ في\ استوديو\ الإنتاج.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(230, 195, 92, 0.25);
+}
+
+.about-text {
+    flex: 1;
+    direction: rtl;
+    text-align: right;
+}
+
+.about-text h2 {
+    margin: 0 0 20px;
+    font-size: 42px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #b8860b, #f5d77a, #b8860b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-text p {
+    margin: 0 0 18px;
+    font-size: 20px;
+    line-height: 2;
+    color: #e8e8e8;
+}
+
+.about-text .highlight {
+    font-weight: 600;
+    color: #e6c35c;
+}
+
+/* ===== الخدمات ===== */
+.services {
+    padding: 90px 8%;
+    background-color: #101010;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.service {
+    padding: 35px 25px;
+    text-align: center;
+    background-color: #161616;
+    border: 1px solid rgba(230, 195, 92, 0.25);
+    border-radius: 16px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+    border-color: #e6c35c;
+    box-shadow: 0 10px 35px rgba(230, 195, 92, 0.2);
+}
+
+.s-icon {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 46px;
+}
+
+.service h3 {
+    margin: 0 0 12px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #e6c35c;
+}
+
+.service p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #cfcfcf;
+}
+
+/* ===== معرض الأعمال ===== */
+.portfolio {
+    padding: 90px 8%;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.filter {
+    padding: 10px 28px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #e6c35c;
+    background: transparent;
+    border: 1px solid rgba(230, 195, 92, 0.5);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter:hover,
+.filter.active {
+    background-color: #e6c35c;
+    color: #111;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.work {
+    position: relative;
+    aspect-ratio: 16 /9 ;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(230, 195, 92, 0.2);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.work:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 35px rgba(230, 195, 92, 0.3);
+}
+
+.work-info {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.work:hover .work-info {
+    opacity: 1;
+}
+
+.work-info h4 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    color: #e6c35c;
+}
+
+.work-info span {
+    font-size: 15px;
+    color: #ddd;
+}
+
+/* ===== الأرقام ===== */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 70px 8%;
+    text-align: center;
+    background-color: #101010;
+    border-top: 1px solid rgba(230, 195, 92, 0.2);
+    border-bottom: 1px solid rgba(230, 195, 92, 0.2);
+}
+
+.num,
+.plus {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #b8860b, #f5d77a, #b8860b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.stat p {
+    margin: 5px 0 0;
+    font-size: 19px;
+    color: #cfcfcf;
+}
+
+/* ===== التواصل ===== */
+.contact {
+    padding: 90px 8%;
+}
+
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 260px;
+    padding: 35px 20px;
+    text-decoration: none;
+    background-color: #151515;
+    border: 1px solid rgba(230, 195, 92, 0.3);
+    border-radius: 16px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #e6c35c;
+    box-shadow: 0 10px 35px rgba(230, 195, 92, 0.25);
+}
+
+.card .icon {
+    font-size: 42px;
+}
+
+.card .label {
+    font-size: 22px;
+    font-weight: 800;
+    color: #e6c35c;
+}
+
+.card .value {
+    font-size: 16px;
+    color: #cfcfcf;
+    direction: ltr;
+}
+
+/* ===== الفوتر ===== */
+.footer {
+    padding: 22px;
+    text-align: center;
+    font-size: 15px;
+    color: #9a9a9a;
+    background-color: #000;
+}
+
+/* ===== زر واتساب عائم ===== */
+.wa-float {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 200;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    animation: pulse 2s infinite;
+    transition: transform 0.3s;
+}
+
+.wa-float:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+    70%  { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+/* ===== زر إنستغرام عائم ===== */
+.ig-float {
+    position: fixed;
+    bottom: 95px;          /* فوق زر الواتساب */
+    left: 25px;
+    z-index: 200;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(220, 39, 67, 0.5);
+    animation: pulse-ig 2s infinite;
+    transition: transform 0.3s;
+}
+
+.ig-float:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse-ig {
+    0%   { box-shadow: 0 0 0 0 rgba(220, 39, 67, 0.6); }
+    70%  { box-shadow: 0 0 0 18px rgba(220, 39, 67, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 39, 67, 0); }
+}
+/* ===== زر فيسبوك عائم ===== */
+.fb-float {
+    position: fixed;
+    bottom: 165px;         /* فوق زر الإنستغرام */
+    left: 25px;
+    z-index: 200;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1877f2;
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5);
+    animation: pulse-fb 2s infinite;
+    transition: transform 0.3s;
+}
+
+.fb-float:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse-fb {
+    0%   { box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.6); }
+    70%  { box-shadow: 0 0 0 18px rgba(24, 119, 242, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(24, 119, 242, 0); }
+}
+
+/* ===== حركة الظهور ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== الموبايل والتابلت ===== */
+@media (max-width: 900px) {
+    .services-grid,
+    .work-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background-color: #0b0b0b;
+        border-bottom: 1px solid rgba(230, 195, 92, 0.2);
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-links a {
+        padding: 16px 6%;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .nav-links a::after {
+        display: none;
+    }
+
+    .about {
+        flex-direction: column;
+        padding: 60px 6%;
+    }
+    .about-img {
+        width: 100%;
+        flex: none;
+    }
+    .about-text h2,
+    .section-title {
+        font-size: 30px;
+    }
+    .about-text p {
+        font-size: 17px;
+    }
+
+    .services,
+    .portfolio,
+    .contact {
+        padding: 60px 6%;
+    }
+    .services-grid,
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+    .num,
+    .plus {
+        font-size: 40px;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+/* ===== Lightbox ===== */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.92);
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(230, 195, 92, 0.3);
+}
+
+.lb-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+    color: #e6c35c;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #e6c35c;
+    border-radius: 50%;
+    cursor: pointer;
+}
